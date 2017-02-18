@@ -1,0 +1,8 @@
+import datetime
+
+first_name = input('Please type your first name:')
+second_name = input('Please type your second name:')
+year_of_birth = input('Please type your year of birth:')
+now = datetime.datetime.now()
+age = now.year - int(year_of_birth)
+print ('Your initials are ' + first_name[0] + second_name[0] + "," + 'your age is ' + str(age) )
