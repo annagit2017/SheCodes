@@ -1,0 +1,38 @@
+roman_to_dec = {'I': 1, 'V':5, 'X':10, 'L':50, 'C':100, 'D':500, 'M':1000}
+dec_number =[]
+
+def get_value(num):
+    '''dec_number.clear() line is not mandatory for programm functionality.
+    BUT if you wish to test multiple inputs simultaniously,
+    you have to clean the list first from previous values'''
+    dec_number.clear()
+    for i in num:
+        dec_number.append(roman_to_dec.get(i))
+    return main_logic(dec_number)
+
+def main_logic(dec_number):
+    while len(dec_number) > 3:  ##### this block of code will calculate hundredth, thousands etc
+        return dec_number[0] + main_logic(dec_number[1:])
+    if len(dec_number) == 1:##### this block of code will calculate unary
+        return dec_number[0]
+    else:
+        if dec_number[-1] <= dec_number[-2]:
+            dec_number[-2] = dec_number[-1] + dec_number[-2]
+            return main_logic(dec_number[:len(dec_number) - 1])
+        else:
+            dec_number[-2] = dec_number[-1] - dec_number[-2]
+            return main_logic(dec_number[:len(dec_number) - 1])
+
+
+#Test cases
+
+print(get_value('XIV'))
+print(get_value('XV'))
+print(get_value('XVI'))
+print(get_value('XXII'))
+print(get_value('LIX'))
+print(get_value('LXXXVIII'))
+print(get_value('LXXXIX'))
+print(get_value('DCCCXC'))
+
+
