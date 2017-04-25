@@ -31,7 +31,7 @@ print(get_value('XV'))
 print(get_value('XVI'))
 print(get_value('XXII'))
 print(get_value('LIX'))
-print(get_value('LXXXVIII'))
+print(get_value('LXXXVIII')) # >>to be fixed :(
 print(get_value('LXXXIX'))
 print(get_value('DCCCXC'))
 
